@@ -1,0 +1,57 @@
+.mainPage {
+  padding-top: 180px;
+  padding-bottom: 240px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+      font-size: 72px;
+      font-weight: 800;
+      text-align: center;
+      margin-block-end: 0;
+  }
+
+  .mainName {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .mainLine {
+          background-color: black;
+          height: 2px;
+          width: 250px;
+      }
+
+      h2 {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          color: #FF9900;
+          font-size: 28px;
+      }
+  }
+}
+
+.mainBorder {
+  padding-left: 12%;
+  padding-right: 12%;
+  display: flex;
+  justify-content: space-between;
+
+  .myMail{
+    display: flex;
+    align-items: center;
+    width: 16px;
+    transform: rotate(-90deg);
+     span {
+      margin-left: -8px;
+      &:hover {
+        cursor: pointer;
+        color: #FF9900;
+
+      }
+     }
+  }
+}

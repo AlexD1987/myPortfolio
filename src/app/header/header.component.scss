@@ -1,0 +1,23 @@
+.header {
+  background-color: #FFFCF3;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 12%;
+  padding-right: 12%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+
+  .logo {
+      height: 50px;
+      width: auto;
+  }
+}
