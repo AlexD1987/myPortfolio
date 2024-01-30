@@ -1,3 +1,18 @@
+/* In deiner styles.css oder styles.scss Datei */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation: fadeIn 5s ease;
+}
+
+
 .mainPage {
   padding-top: 180px;
   padding-bottom: 240px;
