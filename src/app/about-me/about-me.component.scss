@@ -1,0 +1,28 @@
+.aboutMe {
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 64px;
+    
+    display: flex;
+    justify-content: space-between;
+
+    .aboutDescription {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .aboutImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 250px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
