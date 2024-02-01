@@ -55,6 +55,18 @@
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+@keyframes runAnimation {
+  from {
+    transform: translate(100%, -100%);
+    /* Startposition: rechte obere Ecke */
+  }
+
+  to {
+    transform: translate(-100%, 100%);
+    /* Endposition: linke untere Ecke */
+  }
+}
+
 body {
   margin: 0;
   background-color: #FFFCF3;

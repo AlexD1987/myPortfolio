@@ -11,6 +11,7 @@
 .mySkills {
   height: 56vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -60,6 +61,29 @@
       &:hover .iconText {
         opacity: 1;
       }
+    }
+  }
+}
+
+.skillsArrow {
+  padding-left: 12%;
+  padding-right: 20%;
+  padding-bottom: 48px;
+  padding-top: 64px;
+  display: flex;
+  justify-content: flex-end;
+  transform: scaleX(-1);
+
+  .skillArrowAnimation {
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    position: relative;
+
+    img {
+      height: 100%;
+      position: absolute;
+      animation: runAnimation 7s linear infinite;
     }
   }
 }
