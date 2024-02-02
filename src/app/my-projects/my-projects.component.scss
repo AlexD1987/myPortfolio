@@ -1,0 +1,57 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.projectLinks {
+    padding-left: 12%;
+    padding-right: 12%;
+
+    .singleProject {
+        position: relative;
+
+        img {
+            width: 390px;
+            height: auto;
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all 0.5s ease-in-out;
+
+
+        }
+
+        .projectBorder {
+            border: solid 3px black;
+            width: 386px;
+            height: 208px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+
+
+
+        }
+
+        &:hover .projectBorder {
+            animation: fadeIn 0.3s ease-in-out;
+            opacity: 1;
+            transform: translate(8px, 8px);
+            transition: .7s cubic-bezier(.5, .03, .41, 1);
+        }
+
+        &:hover img {
+            -webkit-filter: grayscale(0%);
+            -moz-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+
+
+    }
+}
