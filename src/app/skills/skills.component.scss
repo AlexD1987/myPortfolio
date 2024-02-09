@@ -9,7 +9,7 @@
 }
 
 .mySkills {
-  height: 56vh;
+  height: calc(100vh - 132px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,6 +53,10 @@
       gap: 8px;
       width: 146px;
 
+      img {
+        filter: drop-shadow(3px 5px 2px rgb(0,0,0,0));
+      }
+
       .iconText {
         font-weight: 500;
         opacity: 0;
@@ -62,6 +66,11 @@
       &:hover .iconText {
         opacity: 1;
       }
+
+      &:hover img {
+        filter: drop-shadow(5px 5px 2px rgb(255, 153, 0 , 0.5));
+        transition: filter 0.7s ease;
+      }
     }
   }
 }
@@ -70,7 +79,6 @@
   padding-left: 12%;
   padding-right: 20%;
   padding-bottom: 48px;
-  padding-top: 64px;
   display: flex;
   justify-content: flex-end;
   transform: scaleX(-1);
