@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import 'animate.css';
 
 @Component({
@@ -6,6 +6,17 @@ import 'animate.css';
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
+  ngOnInit(): void {
+    mainPageSlideIn()
+  }
 
 }
+function mainPageSlideIn() {
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout( () => {
+
+    }, 800)
+  } )
+}
+
