@@ -15,9 +15,8 @@ export class HeaderComponent implements OnInit {
     document.addEventListener("DOMContentLoaded", () => {
       setTimeout( () => {
         document.getElementById('header')?.classList.add('active');
-      }, 500)
+      }, 300)
     } )
   }
-
 }
 

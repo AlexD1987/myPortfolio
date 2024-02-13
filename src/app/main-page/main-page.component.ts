@@ -8,7 +8,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('titleOneAnimation', [
       state('inactive', style({
-        transform: 'translateX(1200px)' // Start position
+        transform: 'translateX(1600px)' // Start position
       })),
       state('active', style({
         transform: 'translateX(0)' // End position
@@ -18,7 +18,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ]),
     trigger('titleTwoAnimation', [
       state('inactive', style({
-        transform: 'translateX(-1200px)' // Start position
+        transform: 'translateX(-1600px)' // Start position
       })),
       state('active', style({
         transform: 'translateX(0)' // End position

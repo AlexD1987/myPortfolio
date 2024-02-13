@@ -1,3 +1,13 @@
+@keyframes drawLine {
+  from {
+      width: 0px; /* Startbreite der Animation */
+  }
+  to {
+      width: 246px; /* Zielbreite der Animation */
+  }
+}
+
+
 .mainPage {
     width: 100%;
     height: calc(100vh - 132px);
@@ -19,13 +29,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 813px;
         gap: 16px;
 
 
         .mainLine {
             background-color: black;
             height: 2px;
-            width: 246px;
+            width: 0px;
+            animation: drawLine 2s forwards;
+
         }
 
         h2 {
@@ -37,12 +50,10 @@
     }
 
     .titleOne {
-        transform: translateX(1200px);
         transition: right 0.7s ease-in-out;
     }
 
     .titleTwo {
-        transform: translateX(-1200px);
         transition: left 0.7s ease-in-out;
     }
 }
