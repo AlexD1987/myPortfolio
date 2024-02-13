@@ -16,6 +16,7 @@
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    overflow-y: hidden;
 
     h1 {
         font-size: 100px;
@@ -38,7 +39,6 @@
             background-color: black;
             height: 2px;
             width: 0px;
-            animation: drawLine 2s forwards;
         }
 
         h2 {
@@ -49,11 +49,12 @@
         }
     }
 
-    .titleOne {
+    #titleOne {
         transition: right 0.7s ease-in-out;
     }
 
-    .titleTwo {
+    #titleTwo {
+        margin-block-start: -24px !important;
         transition: left 0.7s ease-in-out;
     }
 }
@@ -98,4 +99,8 @@
 
 .activeTitle {
     transform: translateX(0px) !important;
+}
+
+.drawLine {
+    animation: drawLine 2s forwards;
 }

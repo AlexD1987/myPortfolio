@@ -8,37 +8,56 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('titleOneAnimation', [
       state('inactive', style({
-        transform: 'translateX(1600px)' // Start position
+        transform: 'translateX(1200px)' // Start position
       })),
       state('active', style({
         transform: 'translateX(0)' // End position
       })),
-      transition('inactive => active', animate('1s ease-in-out')),
-      transition('active => inactive', animate('1s ease-in-out'))
+      transition('inactive => active', animate('1.4s ease-in-out')),
+      transition('active => inactive', animate('1.4s ease-in-out'))
     ]),
     trigger('titleTwoAnimation', [
       state('inactive', style({
-        transform: 'translateX(-1600px)' // Start position
+        transform: 'translateX(-1200px)' // Start position
       })),
       state('active', style({
         transform: 'translateX(0)' // End position
       })),
-      transition('inactive => active', animate('1s ease-in-out')),
-      transition('active => inactive', animate('1s ease-in-out'))
+      transition('inactive => active', animate('1.4s ease-in-out')),
+      transition('active => inactive', animate('1.4s ease-in-out'))
+    ]),
+    trigger('titleNameAnimation', [
+      state('inactive', style({
+        transform: 'translateY(800px)' // Start position
+      })),
+      state('active', style({
+        transform: 'translateY(0)' // End position
+      })),
+      transition('inactive => active', animate('2.5s ease-in-out')),
+      transition('active => inactive', animate('2.5s ease-in-out'))
     ])
   ]
 })
 export class MainPageComponent implements OnInit {
   titleOneState: string = 'inactive';
   titleTwoState: string = 'inactive';
+  slideBorder: boolean = false;
+  nameSlideIn: string = 'inactive';
 
   ngOnInit(): void {
     setTimeout(() => {
       this.titleOneState = 'active';
-    }, 1500);
+    }, 1000);
     setTimeout(() => {
       this.titleTwoState = 'active';
-    }, 1500);
+    }, 1000);
+    setTimeout(() => {
+      this.nameSlideIn = 'active';
+    }, 1400);
+    setTimeout( () => {
+      this.slideBorder = true;
+      console.log(this.slideBorder);
+    },3800);
   }
 }
 

@@ -8,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
-    this.fadeHeader();
+/*     this.fadeHeader(); */
   }
 
-  fadeHeader() {
+/*   fadeHeader() {
     document.addEventListener("DOMContentLoaded", () => {
       setTimeout( () => {
         document.getElementById('header')?.classList.add('active');
       }, 300)
     } )
-  }
+  } */
 }
 

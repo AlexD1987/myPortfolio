@@ -1,8 +1,8 @@
 <div class="mainPage">
   <h1 [@titleOneAnimation]="titleOneState" id="titleOne">Frontend</h1>
   <h1 [@titleTwoAnimation]="titleTwoState" id="titleTwo">Developer</h1>
-  <div class="mainName">
-    <div class="mainLine"></div>
+  <div [@titleNameAnimation]="nameSlideIn" class="mainName">
+    <div [ngClass]="{'drawLine': slideBorder}" class="mainLine"></div>
     <h2>Alexander Dause</h2>
   </div>
 </div>
