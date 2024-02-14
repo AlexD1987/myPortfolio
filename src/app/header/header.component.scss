@@ -19,6 +19,12 @@
       height: 50px;
       width: auto;
   }
+
+  #menu {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .active {

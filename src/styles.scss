@@ -202,13 +202,13 @@ h3 {
 }
 
 .bounce {
-  animation: bounceAnimation 1s infinite;
-  animation-duration: 2.5s;
-  animation-delay: 1.5s;
+  animation: bounceAnimation 10s infinite;
+  animation-duration: 2.7s !important;
+  animation-delay: 6s !important;
 }
 
 .reverseBounce {
-  animation: reverseBounceAnimation 1s infinite;
-  animation-duration: 2.5s;
-  animation-delay: 1.5s;
+  animation: reverseBounceAnimation 1.5s infinite;
+  animation-duration: 2.7s !important;
+  animation-delay: 6s !important;
 }

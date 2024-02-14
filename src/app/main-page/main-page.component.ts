@@ -8,7 +8,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('titleOneAnimation', [
       state('inactive', style({
-        transform: 'translateX(1200px)' // Start position
+        transform: 'translateX(1600px)' // Start position
       })),
       state('active', style({
         transform: 'translateX(0)' // End position
@@ -18,7 +18,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ]),
     trigger('titleTwoAnimation', [
       state('inactive', style({
-        transform: 'translateX(-1200px)' // Start position
+        transform: 'translateX(-1600px)' // Start position
       })),
       state('active', style({
         transform: 'translateX(0)' // End position
@@ -43,6 +43,7 @@ export class MainPageComponent implements OnInit {
   titleTwoState: string = 'inactive';
   slideBorder: boolean = false;
   nameSlideIn: string = 'inactive';
+  startArrow: boolean = false;
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -53,11 +54,13 @@ export class MainPageComponent implements OnInit {
     }, 1000);
     setTimeout(() => {
       this.nameSlideIn = 'active';
-    }, 1400);
+    }, 1600);
     setTimeout( () => {
       this.slideBorder = true;
-      console.log(this.slideBorder);
-    },3800);
+    },4600);
+    setTimeout ( () => {
+      this.startArrow = true;
+    }, 7000);
   }
 }
 
