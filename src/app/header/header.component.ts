@@ -6,9 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
+  menuBtn = document.getElementById('headerMenu');
+  menuOpen: boolean = false;
+
 
   ngOnInit(): void {
 /*     this.fadeHeader(); */
+
+  }
+
+  toggleButton() {
+      if (!this.menuOpen) {
+        this.menuBtn?.classList.add('open');
+        this.menuOpen = true;
+      } else {
+        this.menuBtn?.classList.remove('open');
+        this.menuOpen = false;
+      }
   }
 
 /*   fadeHeader() {
@@ -18,5 +32,6 @@ export class HeaderComponent implements OnInit {
       }, 300)
     } )
   } */
+
 }
 
