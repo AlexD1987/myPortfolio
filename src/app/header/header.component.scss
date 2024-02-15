@@ -68,8 +68,17 @@
 
 }
 
-.open {
+.headerMenu.open .menuBtn {
   transform: translateX(-50px);
   background-color: transparent;
+}
+
+
+.headerMenu.open .menuBtn::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.headerMenu.open .menuBtn::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
 
