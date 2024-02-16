@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+handleMenuChange($event: boolean) {
+throw new Error('Method not implemented.');
+}
   title = 'myPortfolio';
 }
