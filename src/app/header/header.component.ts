@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
-import { MainPageComponent } from '../main-page/main-page.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +6,7 @@ import { MainPageComponent } from '../main-page/main-page.component';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
-  @Output() menuOpenChange = new EventEmitter<boolean>();
-  @ViewChild(MainPageComponent)
-  mainPageComponent!: MainPageComponent;
+  @Output() sendMessageEvent = new EventEmitter<void>();
   menuOpen: boolean = false;
 
   ngOnInit(): void {
@@ -17,22 +14,17 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleButton() {
-    if (!this.menuOpen) {
-      this.menuOpen = true;
-      this.sendMessage();
-    } else {
-      this.menuOpen = false;
-      this.sendMessage();
-    }
+    this.menuOpen = !this.menuOpen;
+    console.log(this.menuOpen);
+    this.sendMessage();
   }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
-    this.menuOpenChange.emit(this.menuOpen);
   }
 
   sendMessage() {
-    this.mainPageComponent.getMessage();
+    this.sendMessageEvent.emit();
   }
 }
 

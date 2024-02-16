@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { HeaderComponent } from '../header/header.component'; 
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-main-page',
@@ -49,7 +49,7 @@ export class MainPageComponent implements OnInit {
   startArrow: boolean = false;
   openMenu: boolean = false;
 
-  constructor(private menuBtn: HeaderComponent) {
+  constructor() {
 
   }
 
@@ -79,7 +79,8 @@ export class MainPageComponent implements OnInit {
   }
 
   getMessage() {
-    console.log('get message');
+    this.openMenu = !this.openMenu
+    console.log('get message', this.openMenu);
   };
 }
 

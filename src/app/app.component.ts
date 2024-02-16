@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-handleMenuChange($event: boolean) {
-throw new Error('Method not implemented.');
+  @ViewChild(MainPageComponent)
+  mainPage!: MainPageComponent;
+
+  handleMessageEvent() {
+    this.mainPage.getMessage();
+  }
 }
-  title = 'myPortfolio';
-}
+
