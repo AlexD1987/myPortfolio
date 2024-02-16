@@ -26,7 +26,7 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HeaderComponent, MainPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { MainPageComponent } from '../main-page/main-page.component';
 
 @Component({
   selector: 'app-header',
@@ -6,29 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
+  @Output() menuOpenChange = new EventEmitter<boolean>();
+  @ViewChild(MainPageComponent)
+  mainPageComponent!: MainPageComponent;
   menuOpen: boolean = false;
 
-
   ngOnInit(): void {
-/*     this.fadeHeader(); */
 
   }
 
   toggleButton() {
-      if (!this.menuOpen) {
-        this.menuOpen = true;
-      } else {
-        this.menuOpen = false;
-      }
+    if (!this.menuOpen) {
+      this.menuOpen = true;
+      this.sendMessage();
+    } else {
+      this.menuOpen = false;
+      this.sendMessage();
+    }
   }
 
-/*   fadeHeader() {
-    document.addEventListener("DOMContentLoaded", () => {
-      setTimeout( () => {
-        document.getElementById('header')?.classList.add('active');
-      }, 300)
-    } )
-  } */
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    this.menuOpenChange.emit(this.menuOpen);
+  }
 
+  sendMessage() {
+    this.mainPageComponent.getMessage();
+  }
 }
 

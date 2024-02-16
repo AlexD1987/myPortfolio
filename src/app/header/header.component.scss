@@ -36,13 +36,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
   transition: all .5s ease-in-out;
 
   .menuBtn {
-    width: 50px;
+    width: 30px;
     height: 4px;
     background-color: black;
     transition: all .5s ease-in-out;
@@ -52,18 +52,18 @@
   .menuBtn::after {
     content: '';
     position: absolute;
-    width: 50px;
+    width: 30px;
     height: 4px;
     background-color: black;
     transition: all .5s ease-in-out;
   }
 
   .menuBtn::before {
-    transform: translateY(-16px);
+    transform: translateY(-12px);
   }
 
   .menuBtn::after {
-    transform: translateY(16px);
+    transform: translateY(12px);
   }
 
 }
