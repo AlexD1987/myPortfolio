@@ -114,10 +114,13 @@
 }
 
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   margin: 0;
   background-color: #FFFCF3;
-  scroll-behavior: smooth;
 }
 
 h1,
