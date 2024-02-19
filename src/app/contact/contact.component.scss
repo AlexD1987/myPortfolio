@@ -3,12 +3,7 @@
  background-repeat: no-repeat;
  background-size: cover;
  width: 100%;
- height: calc(92vh - 100px);
- left: 0;
- right: 0;
- bottom: 0;
  padding-top: 10%;
- position: relative;
 
   h3 {
     color: #FFFCF3 !important;
@@ -82,89 +77,6 @@
           rect {
             stroke: #FFFCF3 !important;
           }
-        }
-      }
-    }
-  }
-}
-
-.footer {
-  padding-left: 12%;
-  padding-right: 12%;
-  padding-bottom: 48px;
-  height: 60px;
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-
-  .leftFooter {
-    color: #FFFCF3;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    img {
-      height: 24px;
-    }
-  }
-
-  .rightFooter {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 48px;
-
-    img {
-      width: 24px;
-      height: auto;
-    }
-
-    .socialMediaIcons {
-      display: flex;
-      gap: 16px;
-      align-items: flex-end;
-
-      .gitIcon,
-      .linkedIcon {
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      .gitIcon {
-        background-image: url(../../assets/images/git_white.png);
-        background-position: center;
-        background-size: cover;
-
-        &:hover {
-          background-image: url(../../assets/images/git_orange.png);
-        }
-      }
-
-      .linkedIcon {
-        background-image: url(../../assets/images/linked_white.png);
-        background-position: center;
-        background-size: cover;
-
-        &:hover {
-          background-image: url(../../assets/images/linked_orange.png);
-        }
-      }
-
-      a {
-        color: #FFFCF3;
-        text-decoration: none;
-        font-family: 'Syne';
-        padding-bottom: 4px;
-        padding-right: 16px;
-
-        &:hover {
-          color: #FF9900;
         }
       }
     }
