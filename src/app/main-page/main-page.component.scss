@@ -73,7 +73,12 @@
         width: 16px;
         transform: rotate(-90deg);
 
-        span {
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Syne';
+            font-size: 24px;
+            
             &:hover {
                 cursor: pointer;
                 color: #FF9900;

@@ -8,9 +8,10 @@
   }
 }
 
+
 .mySkills {
   height: calc(100vh - 132px);
-  padding-top: 64px;
+  padding-top: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +79,6 @@
 .skillsArrow {
   padding-left: 12%;
   padding-right: 20%;
-  padding-bottom: 48px;
   display: flex;
   justify-content: flex-end;
   transform: scaleX(-1);
