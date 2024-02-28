@@ -71,6 +71,17 @@
         justify-content: center;
         margin-top: 32px !important;
 
+        button {
+          background: none;
+          border: none;
+          outline: none;
+          box-shadow: none;
+
+          &:hover {
+            cursor: pointer;
+          }
+      }
+
         .btn-1 {
           color: #FFFCF3 !important;
           font-size: 24px !important;
@@ -82,3 +93,20 @@
     }
   }
 }
+
+.validBorder {
+  border-bottom: 3px solid #70e61c !important;
+}
+
+.errorBorder {
+  border-bottom: 3px solid #E61C40 !important;
+}
+
+.errorInput {
+  position: absolute;
+  color: #E61C40;
+  font-family: 'Syne';
+  padding-left: 16px;
+  margin-top: 2px;
+}
+
