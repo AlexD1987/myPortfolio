@@ -46,7 +46,7 @@ export class ContactComponent {
     console.log(this.contactData);
 
     if (this.validName && this.validMail && this.validMessage) {
-      this.completeMessage = true;
+      this.sendMail();
     }
   }
 
@@ -61,5 +61,20 @@ export class ContactComponent {
     const validMailAdress = isEmail(email);
 
     this.validMail = validMailAdress || validMailAdress === undefined;
+  }
+
+  sendMail() {
+/*     this.http.post(this.post.endPoint, this.post.body(this.contactData))
+    .subscribe({
+      next: (response) => {
+
+        ngForm.resetForm();
+      },
+
+      error: (error) => {
+        console.error(error);
+      },
+      complete: () => console.info('send post complete'),
+    }); */
   }
 }
