@@ -28,47 +28,38 @@ export class ContactComponent {
     message: new FormControl('', Validators.required),
   });
 
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
   onSubmit(event: Event) {
     event.preventDefault();
+    this.checkValidInput();
+    this.checkValidMail();
+    console.log(this.contactData);
 
-    if (this.contactForm.controls.name.value != '') {
-      this.validName = true;
-    } else {
-      this.validName = false;
+    if (this.validName && this.validMail && this.validMessage) {
+      this.completeMessage = true;
     }
+  }
 
-    if (this.contactForm.controls.email.value != '' && this.contactForm.controls.email.value != undefined) {
-      this.checkValidMail();
-    } else {
-      this.validMail = false;
-    }
-
-    if (this.contactForm.controls.message.value != '') {
-      this.validMessage = true;
-    } else {
-      this.validMessage = false;
-    }
-
-    if (this.validMail && this.validMessage && this.validName) {
-      this.sendMessage();
-    }
+  checkValidInput() {
+    this.validName = this.contactData.name != '';
+    this.validMail = this.contactData.email != '';
+    this.validMessage = this.contactData.message != '';
   }
 
   checkValidMail() {
-    const email = this.contactForm.controls.email.value as string;
+    const email = this.contactData.email;
     const validMailAdress = isEmail(email);
 
-    if (validMailAdress || validMailAdress === undefined) {
-      this.validMail = true;
-    } else {
-      this.validMail = false;
-    }
-  }
-
-  sendMessage() {
-    this.contactData.name = this.contactForm.controls.name.value as string;
-    this.contactData.email = this.contactForm.controls.email.value as string;
-    this.contactData.message = this.contactForm.controls.message.value as string;
-    console.log(this.contactData);
+    this.validMail = validMailAdress || validMailAdress === undefined;
   }
 }

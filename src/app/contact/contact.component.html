@@ -5,15 +5,15 @@
     <h4>Say hello! let's discuss your ideas and make it happen</h4>
     <form class="contactInputFields" (ngSubmit)="onSubmit($event)" [formGroup]="contactForm">
       <div>
-        <input type="text" placeholder="Your name" name="" id="contactName" formControlName="name" [ngClass]="{'errorBorder': validName === false, 'validBorder': validName}">
+        <input [(ngModel)]="contactData.name" type="text" placeholder="Your name" name="" id="contactName" formControlName="name" [ngClass]="{'errorBorder': validName === false, 'validBorder': validName}">
         <p *ngIf="validName === false" class="errorInput">Please enter your name</p>
       </div>
       <div>
-        <input type="email" placeholder="Your email" name="" id="contactMail" formControlName="email" [ngClass]="{'errorBorder': validMail === false, 'validBorder': validMail}">
+        <input [(ngModel)]="contactData.email" type="email" placeholder="Your email" name="" id="contactMail" formControlName="email" [ngClass]="{'errorBorder': validMail === false, 'validBorder': validMail}">
         <p *ngIf="validMail === false" class="errorInput">Please enter your email address</p>
       </div>
       <div>
-        <textarea placeholder="Your message" name="" id="contactMessage" cols="30" rows="10" formControlName="message" [ngClass]="{'errorBorder': validMessage === false, 'validBorder': validMessage}"></textarea>
+        <textarea [(ngModel)]="contactData.message" placeholder="Your message" name="" id="contactMessage" cols="30" rows="10" formControlName="message" [ngClass]="{'errorBorder': validMessage === false, 'validBorder': validMessage}"></textarea>
         <p *ngIf="validMail === false" class="errorInput">Please enter your message</p>
       </div>
 
