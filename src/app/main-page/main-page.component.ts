@@ -1,6 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { Component, EventEmitter, NgModule, OnInit, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { HeaderComponent } from '../header/header.component';
+import { TranslateLoader, TranslateModule, TranslateService } from "@ngx-translate/core";
+import { AppComponent } from "../app.component";
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../../assets/i18n', '.json')
+}
+
 
 @Component({
   selector: 'app-main-page',
@@ -41,6 +50,7 @@ import { HeaderComponent } from '../header/header.component';
 })
 
 
+
 export class MainPageComponent implements OnInit {
   titleOneState: string = 'inactive';
   titleTwoState: string = 'inactive';
@@ -49,11 +59,21 @@ export class MainPageComponent implements OnInit {
   startArrow: boolean = false;
   openMenu: boolean = false;
 
-  constructor() {
-
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
   }
 
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
+
+
   ngOnInit(): void {
+
+    this.translate.use('en').subscribe(() => {
+      console.log(this.translate.instant('TITLE_ONE'));
+      console.log(this.translate.instant('TITLE_TWO'));
+    });
 
 
     setTimeout(() => {
@@ -71,6 +91,8 @@ export class MainPageComponent implements OnInit {
     setTimeout ( () => {
       this.startArrow = true;
     }, 7000);
+
+
   }
 
   handleMenuChange(menuOpen: boolean) {

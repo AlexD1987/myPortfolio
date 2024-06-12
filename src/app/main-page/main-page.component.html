@@ -1,6 +1,6 @@
 <div class="mainPage">
-  <h1 [@titleOneAnimation]="titleOneState" id="titleOne">Frontend</h1>
-  <h1 [@titleTwoAnimation]="titleTwoState" id="titleTwo">Developer</h1>
+  <h1 [@titleOneAnimation]="titleOneState" id="titleOne">{{ 'TITEL_ONE' | translate }}</h1>
+  <h1 [@titleTwoAnimation]="titleTwoState" id="titleTwo">{{ 'TITEL_TWO' | translate }}</h1>
   <div [@titleNameAnimation]="nameSlideIn" class="mainName">
     <div [ngClass]="{'drawLine': slideBorder}" class="mainLine"></div>
     <h2>Alexander Dause</h2>
@@ -17,5 +17,4 @@
     </div>
     <span>Scroll<br>down</span>
   </div>
-
 </div>

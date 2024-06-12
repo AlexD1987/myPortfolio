@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { isEmail } from 'validator';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { isEmail } from 'validator';
 
 
 export class ContactComponent {
+  constructor(private http: HttpClient){}
+
   validName: boolean | undefined;
   validMail: boolean | undefined;
   validMessage: boolean | undefined;
@@ -29,7 +32,7 @@ export class ContactComponent {
   });
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://alex-dause.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -64,17 +67,29 @@ export class ContactComponent {
   }
 
   sendMail() {
-/*     this.http.post(this.post.endPoint, this.post.body(this.contactData))
+    this.http.post(this.post.endPoint, this.post.body(this.contactData))
     .subscribe({
       next: (response) => {
-
-        ngForm.resetForm();
+        // Handle successful response (e.g., show success message)
+        console.log('Email sent successfully!');
+        this.completeMessage = true;
+        this.contactForm.reset();
+        this.resetMailInput();
       },
-
       error: (error) => {
-        console.error(error);
+        // Handle error (e.g., show error message)
+        console.error('Error sending email:', error);
       },
-      complete: () => console.info('send post complete'),
-    }); */
+      complete: () => console.info('Send post complete'),
+    });
+  }
+
+  resetMailInput() {
+    setTimeout(() => {
+      this.validName = undefined;
+      this.validMail = undefined;
+      this.validMessage = undefined;
+      this.completeMessage = false;
+    }, 3000);
   }
 }
